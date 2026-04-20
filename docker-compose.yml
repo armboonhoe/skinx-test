@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: skinx_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: skinx
+      POSTGRES_PASSWORD: skinx_dev_password
+      POSTGRES_DB: skinx_posts
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U skinx -d skinx_posts"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  postgres_data:

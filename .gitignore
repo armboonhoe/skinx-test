@@ -1,0 +1,45 @@
+# dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# builds
+dist/
+.next/
+out/
+build/
+
+# env — commit `.env.example` and `.env.test` only; real secrets stay local
+.env
+.env.local
+.env*.local
+
+# logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# tooling
+.turbo/
+.cache/
+.vitest/
+.playwright-mcp/
+.playwright/
+coverage/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# editors
+.vscode/
+.idea/
+*.swp
+
+# misc
+*.tsbuildinfo
+
+# personal submission drafts
+EMAIL.md
